@@ -24,7 +24,7 @@ const Footer = () => {
                 src={logo}
                 loading="lazy"
                 decoding="async"
-                alt=" Opus"
+                alt="Opus"
                 className={styles.logo}
               />
             </div>
@@ -52,7 +52,7 @@ const Footer = () => {
                 Privacy policy
               </li>
               <li onClick={() => handleNavigation("/terms-and-conditions")}>
-                Terms &amp; conditions
+                Terms & conditions
               </li>
             </ul>
           </div>
@@ -61,8 +61,8 @@ const Footer = () => {
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Contact us</h3>
             <p className={styles.address}>
-               Opus Paints (Grasim Industries Ltd.)<br />
-              9th Floor,  Centurion, Worli,<br />
+              Opus Paints (Grasim Industries Ltd.)<br />
+              9th Floor, Centurion, Worli,<br />
               Mumbai – 400030, Maharashtra, India
             </p>
             <p className={styles.email}>contact@opuspaintsfranchises.com</p>
@@ -83,7 +83,7 @@ const Footer = () => {
 
         <div className={styles.bottomRow}>
           <p className={styles.copyRight}>
-            © 2025  Opus. All rights reserved.
+            © 2025 Opus. All rights reserved.
           </p>
         </div>
       </div>
