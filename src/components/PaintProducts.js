@@ -6,7 +6,7 @@ import { FaStar, FaCheck } from "react-icons/fa";
 const products = [
   {
     title: "One True Life",
-    desc: "Discover unmatched protection and enduring elegance with  Opus One True Life, offering superior durability and stunning finishes for your home.",
+    desc: "Discover unmatched protection and enduring elegance with Opus One True Life, offering superior durability and stunning finishes for your home.",
     price: "Product starts from ₹<s>728</s> ₹555",
     discount: "24% OFF",
     rating: 4.8,
@@ -15,7 +15,7 @@ const products = [
   },
   {
     title: "One True Vision",
-    desc: "Introducing  Opus One True Vision, a revolutionary paint that sets new standards in color richness and long-lasting protection.",
+    desc: "Introducing Opus One True Vision, a revolutionary paint that sets new standards in color richness and long-lasting protection.",
     price: "Product starts from ₹<s>1028</s> ₹673",
     discount: "35% OFF",
     rating: 4.9,
@@ -24,7 +24,7 @@ const products = [
   },
   {
     title: "One True Flex",
-    desc: "Experience the transformative power of  Opus One True Flex exterior paint. This advanced formula provides exceptional flexibility and weather resistance.",
+    desc: "Experience the transformative power of Opus One True Flex exterior paint. This advanced formula provides exceptional flexibility and weather resistance.",
     price: "Product starts from ₹<s>640</s> ₹474",
     discount: "26% OFF",
     rating: 4.7,
@@ -40,8 +40,8 @@ const PaintProducts = () => {
         <header className={styles.header}>
           <h2 className={styles.heading}>Premium Paint Collection</h2>
           <p className={styles.subheading}>
-            Discover our range of high-quality paints designed to transform your
-            spaces with exceptional durability and stunning finishes.
+            Discover our range of high-quality paints designed to transform your spaces
+            with exceptional durability and stunning finishes.
           </p>
         </header>
 

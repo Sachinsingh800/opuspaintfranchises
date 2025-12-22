@@ -1,6 +1,11 @@
+/* ===== Wrapper – dark neutral band (no blue) ===== */
+
 .wrapper {
   padding: 80px 0;
-  background: radial-gradient(circle at top left, #eef2ff 0%, #ffffff 40%, #f9fafb 100%);
+  background:
+    radial-gradient(circle at top left, rgba(246, 215, 122, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at bottom right, rgba(15, 15, 15, 0.2) 0%, transparent 60%),
+    linear-gradient(135deg, #111111 0%, #181818 45%, #111111 100%);
 }
 
 .container {
@@ -21,25 +26,28 @@
   font-size: 0.8rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #64748b;
+  color: rgba(249, 250, 251, 0.6);
   font-weight: 600;
   margin-bottom: 0.6rem;
 }
 
 .heading {
   font-size: 2.2rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-weight: 800;
   margin-bottom: 0.9rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f6d77a 40%, #facc15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subheading {
   font-size: 0.98rem;
-  color: #6b7280;
+  color: rgba(229, 231, 235, 0.78);
   line-height: 1.7;
 }
 
-/* Card row – very different layout from full-overlay cards */
+/* Card row */
 
 .cardRow {
   display: grid;
@@ -51,11 +59,12 @@
 /* Card */
 
 .card {
-  background: #ffffff;
+  background: rgba(17, 17, 17, 0.95);
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(55, 65, 81, 0.85);
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -63,15 +72,16 @@
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
-  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(246, 215, 122, 0.55);
 }
 
-/* Media section */
+/* Media */
 
 .cardMedia {
   width: 100%;
-  aspect-ratio: 4 / 3; /* fixed, clean top image */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
@@ -100,8 +110,8 @@
   align-self: flex-start;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
-  background: #eff6ff;
-  color: #1d4ed8;
+  background: rgba(246, 215, 122, 0.16);
+  color: #fef9c3;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -111,12 +121,12 @@
 .title {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #0f172a;
+  color: #f9fafb;
 }
 
 .description {
   font-size: 0.95rem;
-  color: #6b7280;
+  color: #d1d5db;
   line-height: 1.6;
 }
 
@@ -126,12 +136,12 @@
   margin-top: 0.4rem;
   align-self: flex-start;
   border-radius: 999px;
-  border: 1px solid #dbeafe;
+  border: 1px solid rgba(246, 215, 122, 0.4);
   padding: 0.55rem 1.1rem;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1d4ed8;
-  background: #ffffff;
+  color: #fbbf24;
+  background: transparent;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -140,10 +150,10 @@
 }
 
 .ctaButton:hover {
-  background: #1d4ed8;
-  color: #ffffff;
-  border-color: #1d4ed8;
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+  background: linear-gradient(135deg, #d4af37, #f59e0b);
+  color: #111111;
+  border-color: transparent;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
 }
 
 .ctaIcon {
@@ -166,21 +176,22 @@
   border-radius: 999px;
   padding: 0.75rem 1.8rem;
   border: none;
-  background: linear-gradient(135deg, #0284c7, #38bdf8);
-  color: #ffffff;
+  background: linear-gradient(135deg, #d4af37, #f59e0b);
+  color: #111111;
   font-size: 0.98rem;
-  font-weight: 600;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(8, 47, 73, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .viewAllButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(8, 47, 73, 0.45);
+  filter: brightness(1.03);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.95);
 }
 
 .viewAllIcon {
@@ -196,7 +207,7 @@
 
 .ctaButton:focus-visible,
 .viewAllButton:focus-visible {
-  outline: 2px solid #1d4ed8;
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 

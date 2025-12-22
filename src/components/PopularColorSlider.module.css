@@ -1,8 +1,13 @@
+/* ===== Section wrapper – neutral / no blue ===== */
+
 .wrapper {
   padding: 80px 0;
-  background: radial-gradient(circle at top left, #eef2ff 0%, #ffffff 45%, #f9fafb 100%);
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(246, 215, 122, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(15, 15, 15, 0.12) 0%, transparent 60%),
+    linear-gradient(135deg, #111111 0%, #181818 45%, #111111 100%);
 }
 
 .wrapper::before {
@@ -15,7 +20,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(2, 139, 213, 0.35) 50%,
+    rgba(212, 175, 55, 0.6) 50%,
     transparent 100%
   );
 }
@@ -26,6 +31,8 @@
   padding: 0 2rem;
 }
 
+/* Header */
+
 .header {
   text-align: left;
   max-width: 640px;
@@ -34,9 +41,9 @@
 
 .heading {
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 0.9rem;
-  background: linear-gradient(135deg, #1e293b 0%, #028bd5 100%);
+  background: linear-gradient(135deg, #f9fafb 0%, #f6d77a 40%, #facc15 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -44,7 +51,7 @@
 
 .subheading {
   font-size: 1.02rem;
-  color: #64748b;
+  color: rgba(229, 231, 235, 0.78);
   line-height: 1.7;
 }
 
@@ -78,28 +85,28 @@
   display: none;
 }
 
-/* Card – new look: swatch on top, text below */
+/* Card */
 
 .card {
   flex: 0 0 260px;
   max-width: 260px;
   scroll-snap-align: start;
-  background: #ffffff;
-  border-radius: 18px;
+  background: rgba(24, 24, 24, 0.96);
+  border-radius: 20px;
   box-shadow:
-    0 10px 26px rgba(15, 23, 42, 0.12),
-    0 0 0 1px rgba(226, 232, 240, 0.9);
+    0 14px 36px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(55, 65, 81, 0.7);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 18px 40px rgba(15, 23, 42, 0.18),
-    0 0 0 1px rgba(191, 219, 254, 1);
+    0 22px 52px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(246, 215, 122, 0.5);
 }
 
 /* Swatch bar */
@@ -116,8 +123,8 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(15, 23, 42, 0.06),
-    rgba(15, 23, 42, 0.28)
+    rgba(15, 15, 15, 0.08),
+    rgba(15, 15, 15, 0.32)
   );
   mix-blend-mode: multiply;
 }
@@ -133,12 +140,12 @@
 
 .chip {
   align-self: flex-start;
-  padding: 0.18rem 0.7rem;
+  padding: 0.2rem 0.7rem;
   border-radius: 999px;
-  background: #eff6ff;
-  color: #1d4ed8;
+  background: rgba(246, 215, 122, 0.14);
+  color: #fef9c3;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -146,12 +153,12 @@
 .colorName {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #0f172a;
+  color: #f9fafb;
 }
 
 .colorCode {
   font-size: 0.85rem;
-  color: #0284c7;
+  color: #fbbf24;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -170,25 +177,25 @@
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  background: #ffffff;
-  border: none;
+  background: rgba(24, 24, 24, 0.96);
+  border: 1px solid rgba(55, 65, 81, 0.7);
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.95rem;
-  color: #028bd5;
+  color: #f3f4f6;
   cursor: pointer;
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
   transition: all 0.2s ease;
   z-index: 10;
 }
 
 .arrow:hover {
-  background: #028bd5;
-  color: #ffffff;
+  background: linear-gradient(135deg, #f6d77a, #f59e0b);
+  color: #111111;
   transform: translateY(-50%) scale(1.06);
-  box-shadow: 0 12px 28px rgba(2, 139, 213, 0.32);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.8);
 }
 
 .arrow:active {
@@ -204,7 +211,7 @@
 }
 
 .hidden {
-  opacity: 0.15;
+  opacity: 0.12;
   pointer-events: none;
 }
 
@@ -221,26 +228,26 @@
   height: 7px;
   border-radius: 999px;
   border: none;
-  background: #d1d5db;
+  background: #4b5563;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .dot:hover {
-  background: #028bd5;
+  background: #f59e0b;
   transform: scale(1.2);
 }
 
 .activeDot {
-  background: #028bd5;
-  transform: scale(1.5);
+  background: #f59e0b;
+  transform: scale(1.6);
 }
 
 /* Focus states */
 
 .arrow:focus-visible,
 .dot:focus-visible {
-  outline: 2px solid #028bd5;
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 
