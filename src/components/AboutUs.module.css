@@ -2,9 +2,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background:
+    radial-gradient(circle at top left, rgba(246, 215, 122, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at bottom right, rgba(15, 15, 15, 0.25) 0%, transparent 60%),
+    linear-gradient(135deg, #050816 0%, #0b1020 45%, #050816 100%);
 }
 
+/* keep inner max-width so content stays readable */
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -27,100 +31,40 @@
 .heroBadge {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(135deg, #1976d2, #1565c0);
-  color: white;
+  background: linear-gradient(135deg, #facc15, #f97316);
+  color: #020617;
   padding: 8px 20px;
-  border-radius: 50px;
+  border-radius: 999px;
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+  box-shadow: 0 4px 18px rgba(250, 204, 21, 0.35);
 }
 
 .title {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #1a237e;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  background: linear-gradient(135deg, #1a237e, #1976d2);
+  background: linear-gradient(135deg, #e5e7eb, #facc15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #1976d2, #00bcd4);
+  background: linear-gradient(135deg, #f97316, #facc15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  color: #546e7a;
+  font-size: 1.2rem;
+  color: #cbd5f5;
   margin-bottom: 3rem;
   line-height: 1.7;
   font-weight: 400;
-}
-
-/* CTA Buttons */
-.ctaContainer {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
-}
-
-.ctaButton {
-  background: linear-gradient(135deg, #1976d2, #1565c0);
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 8px 25px rgba(25, 118, 210, 0.3);
-}
-
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(25, 118, 210, 0.4);
-}
-
-.secondaryButton {
-  background: transparent;
-  color: #1976d2;
-  border: 2px solid #1976d2;
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.secondaryButton:hover {
-  background: #1976d2;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.arrowIcon {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
-}
-
-.ctaButton:hover .arrowIcon {
-  transform: translateX(4px);
 }
 
 /* Stats Grid */
@@ -140,9 +84,8 @@
 .statNumber {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1976d2;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #1976d2, #00bcd4);
+  background: linear-gradient(135deg, #facc15, #22c55e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -150,7 +93,7 @@
 
 .statLabel {
   font-size: 0.875rem;
-  color: #546e7a;
+  color: #9ca3af;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -165,29 +108,30 @@
 }
 
 .featureCard {
-  background: white;
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.12) 0%, rgba(15, 23, 42, 0.95) 45%);
   border-radius: 20px;
   padding: 2.5rem;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   overflow: hidden;
 }
 
 .featureCard::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #1976d2, #00bcd4);
+  height: 3px;
+  background: linear-gradient(135deg, #facc15, #22c55e);
 }
 
 .featureCard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.85);
+  border-color: rgba(250, 204, 21, 0.8);
 }
 
 .cardHeader {
@@ -200,8 +144,8 @@
 .checkmark {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #4caf50, #45a049);
-  border-radius: 12px;
+  background: radial-gradient(circle at top left, #22c55e, #16a34a);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,41 +160,40 @@
 .featureNumber {
   font-size: 3rem;
   font-weight: 800;
-  color: #f0f4f8;
+  color: rgba(148, 163, 184, 0.35);
   line-height: 1;
 }
 
 .featureTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a237e;
+  color: #e5e7eb;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .featureDescription {
-  color: #546e7a;
+  color: #cbd5f5;
   line-height: 1.6;
   font-size: 1rem;
 }
 
 /* Additional Content Section */
 .additionalContent {
-  background: linear-gradient(135deg, #1a237e 0%, #1976d2 100%);
+  background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.18) 0%, transparent 55%),
+    linear-gradient(135deg, #020617 0%, #111827 100%);
   border-radius: 30px;
   padding: 5rem 3rem;
   margin: 4rem 0;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.5);
 }
 
 .additionalContent::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -268,14 +211,14 @@
 .sectionTitle {
   font-size: 3rem;
   font-weight: 800;
-  color: white;
+  color: #f9fafb;
   margin-bottom: 1rem;
   line-height: 1.1;
 }
 
 .sectionSubtitle {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  color: rgba(226, 232, 240, 0.9);
   line-height: 1.6;
 }
 
@@ -286,28 +229,29 @@
 }
 
 .contentColumn {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   transition: all 0.3s ease;
 }
 
 .contentColumn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 1);
   transform: translateY(-5px);
+  border-color: rgba(250, 204, 21, 0.7);
 }
 
 .contentIcon {
   width: 60px;
   height: 60px;
-  background: rgba(255, 255, 255, 0.2);
+  background: radial-gradient(circle at top left, #facc15, #f97316);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #020617;
   margin-bottom: 1.5rem;
 }
 
@@ -319,12 +263,12 @@
 .contentTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: #f9fafb;
   margin-bottom: 1rem;
 }
 
 .contentColumn p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(226, 232, 240, 0.95);
   line-height: 1.7;
   font-size: 1rem;
   margin: 0;
@@ -335,7 +279,7 @@
   .title {
     font-size: 3rem;
   }
-  
+
   .sectionTitle {
     font-size: 2.5rem;
   }
@@ -345,58 +289,47 @@
   .container {
     padding: 0 20px;
   }
-  
+
   .hero {
     padding: 4rem 0 2rem;
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
-  
+
   .subtitle {
-    font-size: 1.125rem;
+    font-size: 1.05rem;
   }
-  
-  .ctaContainer {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .ctaButton, .secondaryButton {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-  }
-  
+
   .featuresGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .featureCard {
     padding: 2rem;
   }
-  
+
   .additionalContent {
     padding: 3rem 1.5rem;
     margin: 3rem 0;
     border-radius: 20px;
   }
-  
+
   .sectionTitle {
     font-size: 2rem;
   }
-  
+
   .contentGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .contentColumn {
     padding: 2rem;
   }
-  
+
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -407,37 +340,37 @@
   .container {
     padding: 0 16px;
   }
-  
+
   .hero {
     padding: 3rem 0 1.5rem;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .heroBadge {
     font-size: 0.75rem;
     padding: 6px 16px;
   }
-  
+
   .featureCard {
     padding: 1.5rem;
   }
-  
+
   .additionalContent {
     padding: 2rem 1rem;
     border-radius: 16px;
   }
-  
+
   .sectionTitle {
     font-size: 1.75rem;
   }
-  
+
   .contentColumn {
     padding: 1.5rem;
   }
-  
+
   .statNumber {
     font-size: 2rem;
   }
