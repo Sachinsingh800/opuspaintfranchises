@@ -1,0 +1,25 @@
+/* Full-width responsive section */
+.wrapper {
+  width: 100%;
+  padding: 32px 0;
+  background: radial-gradient(circle at top left, #e5f0ff 0%, #ffffff 45%, #f3f4f6 100%);
+  display: flex;
+  justify-content: center;
+}
+
+/* Fluid container: scales on all screens, no fixed height */
+.banner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/* Responsive image: no cropping */
+.image {
+  display: block;
+  width: 100%;   /* fills container width */
+  height: auto;  /* keeps aspect ratio */
+  /* If you previously had object-fit: cover, remove it or use contain */
+  object-fit: contain;
+}

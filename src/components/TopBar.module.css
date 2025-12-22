@@ -1,0 +1,38 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.bullet {
+  color: #ffc107; /* yellow bullet */
+}
+
+.applyBtn {
+  background-color: #29a3ec;
+  color: white;
+  font-weight: bold;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+@media (min-width: 600px) {
+  .applyBtn {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,284 @@
+.wrapper {
+  padding: 80px 0;
+  background: radial-gradient(circle at top left, #eef2ff 0%, #ffffff 40%, #f9fafb 100%);
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+/* Header */
+
+.header {
+  text-align: left;
+  max-width: 640px;
+  margin-bottom: 2.8rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.9rem;
+}
+
+.subheading {
+  font-size: 0.98rem;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* Card row – very different layout from full-overlay cards */
+
+.cardRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Card */
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+/* Media section */
+
+.cardMedia {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* fixed, clean top image */
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.4s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.07);
+}
+
+/* Body */
+
+.cardBody {
+  padding: 1.4rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* CTA inside card */
+
+.ctaButton {
+  margin-top: 0.4rem;
+  align-self: flex-start;
+  border-radius: 999px;
+  border: 1px solid #dbeafe;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+.ctaIcon {
+  font-size: 0.9rem;
+  transition: transform 0.25s ease;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translateX(3px);
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.viewAllButton {
+  border-radius: 999px;
+  padding: 0.75rem 1.8rem;
+  border: none;
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(8, 47, 73, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.viewAllButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(8, 47, 73, 0.45);
+}
+
+.viewAllIcon {
+  font-size: 0.9rem;
+  transition: transform 0.25s ease;
+}
+
+.viewAllButton:hover .viewAllIcon {
+  transform: translateX(4px);
+}
+
+/* Focus states */
+
+.ctaButton:focus-visible,
+.viewAllButton:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .header {
+    text-align: left;
+    margin-bottom: 2.2rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .subheading {
+    font-size: 0.95rem;
+  }
+
+  .cardRow {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .cardBody {
+    padding: 1.1rem 1.2rem 1.3rem;
+  }
+
+  .title {
+    font-size: 1.05rem;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 48px 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .subheading {
+    font-size: 0.92rem;
+  }
+
+  .cardBody {
+    padding: 1rem 1rem 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .viewAllButton {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.94rem;
+  }
+}

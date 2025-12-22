@@ -1,25 +1,81 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState, lazy, Suspense } from "react";
+import Navbar from "./components/Navbar";
+import HeroForm from "./components/HeroForm";
+import styles from "./App.module.css";
+
+// Lazy load non-critical components
+const PopularColorSlider = lazy(() =>
+  import("./components/PopularColorSlider")
+);
+const AssuranceBanner = lazy(() => import("./components/AssuranceBanner"));
+const IdeasSection = lazy(() => import("./components/IdeasSection"));
+const PaintProducts = lazy(() => import("./components/PaintProducts"));
+const PaintingMadeEasy = lazy(() => import("./components/PaintingMadeEasy"));
+const ConnectFormSection = lazy(() =>
+  import("./components/ConnectFormSection")
+);
+const FAQSection = lazy(() => import("./components/FAQSection"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setShowScrollTop(scrollY > window.innerHeight);
+          setIsScrolled(scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <div
+        className={`${styles.stickyNavbar} ${
+          isScrolled ? styles.scrolled : ""
+        }`}
+      >
+        <Navbar />
+      </div>
+      <HeroForm />
+
+      <Suspense fallback={<div className={styles.loadingPlaceholder} />}>
+        <PopularColorSlider />
+        <AssuranceBanner />
+        <IdeasSection />
+        <PaintProducts />
+        <PaintingMadeEasy />
+        <ConnectFormSection />
+        <FAQSection />
+        <Footer />
+      </Suspense>
+
+      {showScrollTop && (
+        <div className={styles.scrollTop} onClick={scrollToTop}>
+          <span>↑</span>
+        </div>
+      )}
     </div>
   );
 }
 
-export default App;
+export default React.memo(App);
