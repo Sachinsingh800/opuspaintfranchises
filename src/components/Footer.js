@@ -65,7 +65,7 @@ const Footer = () => {
               9th Floor, Centurion, Worli,<br />
               Mumbai – 400030, Maharashtra, India
             </p>
-            <p className={styles.email}>contact@opuspaintsfranchises.com</p>
+            <p className={styles.email}>contact@opuspaintfranchises.com</p>
 
             <div className={styles.whatsapp}>
               <a
