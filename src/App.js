@@ -4,6 +4,15 @@ import HeroForm from "./components/HeroForm";
 import styles from "./App.module.css";
 
 // Lazy load non-critical components
+const FranchisingCards = lazy(() =>
+  import("./components/FranchisingCardsSection")
+);
+const InvestmentReturns = lazy(() =>
+  import("./components/InvestmentReturnsSection")
+);
+const WhatWeProvide = lazy(() =>
+  import("./components/WhatWeProvideSection")
+);
 const PopularColorSlider = lazy(() =>
   import("./components/PopularColorSlider")
 );
@@ -59,6 +68,9 @@ function App() {
       <HeroForm />
 
       <Suspense fallback={<div className={styles.loadingPlaceholder} />}>
+        <FranchisingCards />
+         <InvestmentReturns />
+         <WhatWeProvide />
         <PopularColorSlider />
         <AssuranceBanner />
         <IdeasSection />
