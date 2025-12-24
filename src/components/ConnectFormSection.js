@@ -37,7 +37,8 @@ const ConnectFormSection = ({ applyFor = "", onClose }) => {
     const email = formData.email.trim();
     const phone = formData.phone.trim();
 
-    if (!name || !email || !phone) return "Please fill in Name, Email, and Phone fields.";
+    if (!name || !email || !phone)
+      return "Please fill in Name, Email, and Phone fields.";
 
     // Basic India mobile validation (10 digits). Adjust if you accept country codes.
     const digits = phone.replace(/\D/g, "");
@@ -71,7 +72,7 @@ const ConnectFormSection = ({ applyFor = "", onClose }) => {
         source: "connect-form",
       };
 
-      await push(applicationsRef, payload); // push appends a new child with unique key. [web:4]
+      await push(applicationsRef, payload);
 
       setFormData({
         name: "",
@@ -85,15 +86,12 @@ const ConnectFormSection = ({ applyFor = "", onClose }) => {
 
       setSubmitStatus({ ok: true, message: "Submitted successfully." });
 
-      // For modal usage:
-      // Close the dialog after submit (recommended)
+      // For modal usage: close after submit
       if (onClose) onClose();
-
-      // If you still want /thankyou page instead, remove onClose above and use navigate.
-      // navigate("/thankyou");
     } catch (err) {
       console.error("Error saving data:", err);
       alert("Failed to submit form. Please try again.");
+      setSubmitStatus({ ok: false, message: "Failed to submit. Please try again." });
     } finally {
       setIsSubmitting(false);
     }
@@ -193,7 +191,7 @@ const ConnectFormSection = ({ applyFor = "", onClose }) => {
                   name="businessType"
                   value={formData.businessType}
                   onChange={handleChange}
-                  className={styles.input}
+                  className={`${styles.input} ${styles.select}`}
                 >
                   <option value="">Select Business Type</option>
                   <option value="Dealership">Dealership</option>
@@ -211,7 +209,7 @@ const ConnectFormSection = ({ applyFor = "", onClose }) => {
                   name="investment"
                   value={formData.investment}
                   onChange={handleChange}
-                  className={styles.input}
+                  className={`${styles.input} ${styles.select}`}
                 >
                   <option value="">Investment &amp; financial details</option>
                   <option value="₹10-20 Lakhs">₹10-20 Lakhs</option>

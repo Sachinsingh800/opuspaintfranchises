@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "./images/-opus-logo.png";
 
@@ -30,13 +30,10 @@ const Navbar = () => {
   const handleLogoClick = () => {
     navigate("/");
     closeMenu();
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <header
-      className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}
-    >
+    <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.navContainer}>
         <div className={styles.logoContainer} onClick={handleLogoClick}>
           <img
@@ -45,16 +42,12 @@ const Navbar = () => {
             decoding="async"
             height="40"
             width="auto"
-            alt="Opus"
+            alt=" Opus"
             className={styles.logo}
           />
         </div>
 
-        <nav
-          className={`${styles.navLinks} ${
-            menuOpen ? styles.showMenu : ""
-          }`}
-        >
+        <nav className={`${styles.navLinks} ${menuOpen ? styles.showMenu : ""}`}>
           <div className={styles.navItems}>
             <a href="/" onClick={closeMenu} className={styles.navItem}>
               <span>HOME</span>
@@ -68,13 +61,13 @@ const Navbar = () => {
           </div>
         </nav>
 
-        <button className={styles.menuButton} onClick={toggleMenu}>
+        <div className={styles.menuButton} onClick={toggleMenu}>
           {menuOpen ? (
             <FaTimes className={styles.menuIcon} />
           ) : (
             <FaBars className={styles.menuIcon} />
           )}
-        </button>
+        </div>
       </div>
     </header>
   );

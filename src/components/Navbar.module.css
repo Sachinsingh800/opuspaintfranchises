@@ -1,23 +1,16 @@
 /* Navbar.module.css */
-/* Full-width dark gradient to match assurance/footer theme */
-
 .navbar {
   width: 100%;
-  position: sticky;
-  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  background:
-    radial-gradient(circle at top left, rgba(246, 215, 122, 0.18) 0%, transparent 55%),
-    radial-gradient(circle at bottom right, rgba(15, 15, 15, 0.2) 0%, transparent 60%),
-    linear-gradient(135deg, #111111 0%, #181818 45%, #111111 100%);
-  border-bottom: 1px solid rgba(249, 250, 251, 0.16);
-  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Slightly stronger border and subtle shadow when scrolled */
 .navbar.scrolled {
-  border-bottom-color: rgba(249, 250, 251, 0.25);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navContainer {
@@ -30,7 +23,6 @@
   height: 70px;
 }
 
-/* Logo */
 .logoContainer {
   display: flex;
   align-items: center;
@@ -48,7 +40,6 @@
   object-fit: contain;
 }
 
-/* Desktop nav */
 .navLinks {
   display: flex;
   align-items: center;
@@ -67,7 +58,7 @@
 .navItem {
   position: relative;
   text-decoration: none;
-  color: #e5e7eb;
+  color: #333;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
@@ -80,25 +71,33 @@
 }
 
 .navItem::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   transition: width 0.3s ease;
 }
 
 .navItem:hover {
-  color: #facc15;
+  color: #667eea;
 }
 
 .navItem:hover::after {
   width: 100%;
 }
 
-/* Mobile menu button */
+.dropdownIcon {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.navItem:hover .dropdownIcon {
+  transform: rotate(180deg);
+}
+
 .menuButton {
   display: none;
   flex-direction: column;
@@ -109,21 +108,21 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  border-radius: 999px;
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 .menuButton:hover {
-  background: rgba(249, 250, 251, 0.08);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .menuIcon {
-  color: #f9fafb;
+  color: #333;
   transition: color 0.3s ease;
 }
 
 .menuButton:hover .menuIcon {
-  color: #facc15;
+  color: #667eea;
 }
 
 /* Mobile Styles */
@@ -142,11 +141,8 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background:
-      radial-gradient(circle at top left, rgba(246, 215, 122, 0.18) 0%, transparent 55%),
-      radial-gradient(circle at bottom right, rgba(15, 15, 15, 0.2) 0%, transparent 60%),
-      linear-gradient(135deg, #111111 0%, #181818 45%, #111111 100%);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -172,7 +168,7 @@
     width: 100%;
     padding: 1rem 2rem;
     justify-content: center;
-    border-bottom: 1px solid rgba(249, 250, 251, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     font-size: 1rem;
   }
 
@@ -181,7 +177,11 @@
   }
 
   .navItem:hover {
-    background: rgba(250, 204, 21, 0.08);
+    background: rgba(102, 126, 234, 0.1);
+  }
+
+  .dropdownIcon {
+    display: none;
   }
 }
 
@@ -200,7 +200,7 @@
   }
 }
 
-/* Smooth tap behavior */
+/* Smooth transitions for all interactive elements */
 .navItem,
 .menuButton,
 .logoContainer {
@@ -210,7 +210,7 @@
 /* Focus styles for accessibility */
 .navItem:focus-visible,
 .menuButton:focus-visible {
-  outline: 2px solid #facc15;
+  outline: 2px solid #667eea;
   outline-offset: 2px;
   border-radius: 4px;
 }

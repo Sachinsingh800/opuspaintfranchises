@@ -1,13 +1,8 @@
-/* ===== Wrapper – dark premium band (no blue) ===== */
-
 .wrapper {
   padding: 90px 0;
+  background: radial-gradient(circle at top left, #e5f0ff 0%, #ffffff 45%, #f9fafb 100%);
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at top left, rgba(246, 215, 122, 0.18) 0%, transparent 55%),
-    radial-gradient(circle at bottom right, rgba(15, 15, 15, 0.24) 0%, transparent 60%),
-    linear-gradient(135deg, #111111 0%, #181818 45%, #111111 100%);
 }
 
 .wrapper::before {
@@ -15,8 +10,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 10% 20%, rgba(246, 215, 122, 0.06) 0%, transparent 55%),
-    radial-gradient(circle at 90% 80%, rgba(0, 0, 0, 0.25) 0%, transparent 55%);
+    radial-gradient(circle at 10% 20%, rgba(2, 139, 213, 0.04) 0%, transparent 55%),
+    radial-gradient(circle at 90% 80%, rgba(41, 163, 236, 0.04) 0%, transparent 55%);
 }
 
 .container {
@@ -37,20 +32,20 @@
   font-size: 0.8rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(249, 250, 251, 0.6);
+  color: #64748b;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .heading {
   font-size: 2.3rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 0.8rem;
-  color: #f9fafb;
+  color: #0f172a;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #f6d77a 0%, #facc15 50%, #fbbf24 100%);
+  background: linear-gradient(135deg, #028bd5 0%, #29a3ec 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -58,7 +53,7 @@
 
 .subtext {
   font-size: 1rem;
-  color: rgba(229, 231, 235, 0.8);
+  color: #64748b;
   line-height: 1.7;
 }
 
@@ -73,11 +68,11 @@
 /* Card */
 
 .card {
-  background: rgba(17, 17, 17, 0.96);
+  background: #ffffff;
   border-radius: 22px;
   box-shadow:
-    0 18px 48px rgba(0, 0, 0, 0.85),
-    0 0 0 1px rgba(55, 65, 81, 0.85);
+    0 10px 28px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(226, 232, 240, 0.9);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -85,8 +80,8 @@
 .card:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 26px 64px rgba(0, 0, 0, 0.95),
-    0 0 0 1px rgba(246, 215, 122, 0.55);
+    0 20px 45px rgba(15, 23, 42, 0.16),
+    0 0 0 1px rgba(191, 219, 254, 1);
 }
 
 /* Inner layout: text left, image right */
@@ -117,26 +112,26 @@
   width: 52px;
   height: 52px;
   border-radius: 16px;
-  background: radial-gradient(circle at 20% 0, #fef3c7 0%, #f59e0b 45%, #b45309 90%);
+  background: linear-gradient(135deg, #028bd5 0%, #29a3ec 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #111111;
+  color: #ffffff;
   font-size: 1.4rem;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 10px 24px rgba(2, 139, 213, 0.35);
   flex-shrink: 0;
 }
 
 .cardTitle {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #f9fafb;
+  color: #0f172a;
   margin: 0;
 }
 
 .description {
   font-size: 0.96rem;
-  color: #d1d5db;
+  color: #4b5563;
   line-height: 1.6;
 }
 
@@ -151,11 +146,11 @@
 .feature {
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  background: rgba(31, 41, 55, 0.9);
-  color: #f9fafb;
+  background: #eff6ff;
+  color: #1d4ed8;
   font-size: 0.82rem;
   font-weight: 500;
-  border: 1px solid rgba(156, 163, 175, 0.5);
+  border: 1px solid rgba(129, 140, 248, 0.4);
 }
 
 /* Learn more CTA */
@@ -165,7 +160,7 @@
   align-self: flex-start;
   border: none;
   background: transparent;
-  color: #fbbf24;
+  color: #0284c7;
   font-weight: 600;
   font-size: 0.95rem;
   display: inline-flex;
@@ -179,7 +174,7 @@
 .learnArrow {
   width: 18px;
   height: 2px;
-  background: #fbbf24;
+  background: #0284c7;
   position: relative;
   border-radius: 999px;
   transition: all 0.2s ease;
@@ -192,7 +187,7 @@
   right: 0;
   width: 6px;
   height: 2px;
-  background: #fbbf24;
+  background: #0284c7;
   border-radius: 999px;
   transition: all 0.2s ease;
 }
@@ -206,18 +201,18 @@
 }
 
 .learnMore:hover {
-  color: #f59e0b;
+  color: #0369a1;
   transform: translateX(3px);
 }
 
 .learnMore:hover .learnArrow {
   width: 22px;
-  background: #f59e0b;
+  background: #0369a1;
 }
 
 .learnMore:hover .learnArrow::before,
 .learnMore:hover .learnArrow::after {
-  background: #f59e0b;
+  background: #0369a1;
   right: -1px;
 }
 
@@ -232,7 +227,7 @@
   width: 100%;
   max-width: 320px;
   border-radius: 18px;
-  background: radial-gradient(circle at top, #fef9c3 0%, #111827 75%);
+  background: linear-gradient(135deg, #eff6ff 0%, #e2e8f0 100%);
   padding: 0.7rem;
   display: flex;
   align-items: center;
@@ -255,12 +250,12 @@
 /* Focus states */
 
 .card:focus-within {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid #028bd5;
   outline-offset: 4px;
 }
 
 .learnMore:focus-visible {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid #028bd5;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -331,6 +326,11 @@
 
   .cardInner {
     padding: 1.3rem 1.2rem 1.5rem;
+  }
+
+  .iconTitleRow {
+    flex-direction: row;
+    align-items: center;
   }
 
   .cardTitle {

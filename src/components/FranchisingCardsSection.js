@@ -1,7 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./FranchisingCardsSection.module.css";
 import ConnectFormSection from "./ConnectFormSection";
-
 
 export default function FranchisingCardsSection() {
   const cards = useMemo(
@@ -55,24 +54,37 @@ export default function FranchisingCardsSection() {
   const openDialog = (type) => {
     setApplyFor(type);
     setIsOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeDialog = () => {
     setIsOpen(false);
-    document.body.style.overflow = "";
+    setApplyFor("");
   };
 
-  const onOverlayClick = (e) => {
+  const onOverlayMouseDown = (e) => {
     if (e.target === e.currentTarget) closeDialog();
   };
 
-  React.useEffect(() => {
+  // Close on Escape
+  useEffect(() => {
+    if (!isOpen) return;
     const onKeyDown = (e) => {
       if (e.key === "Escape") closeDialog();
     };
-    if (isOpen) window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
+
+  // Lock body scroll while modal is open
+  useEffect(() => {
+    if (!isOpen) return;
+    if (typeof document === "undefined") return;
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
   }, [isOpen]);
 
   return (
@@ -119,22 +131,30 @@ export default function FranchisingCardsSection() {
       </div>
 
       {isOpen && (
-        <div className={styles.overlay} onMouseDown={onOverlayClick} role="presentation">
+        <div
+          className={styles.overlay}
+          onMouseDown={onOverlayMouseDown}
+          role="presentation"
+        >
           <div
             className={styles.modal}
             role="dialog"
             aria-modal="true"
-            aria-label="Connect form dialog"
+            aria-labelledby="connect-form-title"
+            onMouseDown={(e) => e.stopPropagation()}
           >
             <div className={styles.modalHeader}>
-              <div className={styles.modalTitle}>
+              <div className={styles.modalTitle} id="connect-form-title">
                 Connect Form{" "}
-                <span className={styles.modalSubtitle}>
-                  ({applyFor})
-                </span>
+                <span className={styles.modalSubtitle}>({applyFor})</span>
               </div>
 
-              <button className={styles.closeBtn} onClick={closeDialog} type="button">
+              <button
+                className={styles.closeBtn}
+                onClick={closeDialog}
+                type="button"
+                aria-label="Close dialog"
+              >
                 ✕
               </button>
             </div>

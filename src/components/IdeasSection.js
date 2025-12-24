@@ -34,7 +34,8 @@ const IdeasSection = () => {
           <p className={styles.eyebrow}>Inspiration hub</p>
           <h2 className={styles.heading}>Design ideas for every room</h2>
           <p className={styles.subheading}>
-            Browse handpicked stories, looks, and colour themes to spark your next makeover.
+            Browse handpicked stories, looks, and colour themes to spark your
+            next makeover.
           </p>
         </header>
 

@@ -37,13 +37,14 @@ const PaintingMadeEasy = () => {
     <section className={styles.wrapper}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <p className={styles.eyebrow}>Services &amp; guidance</p>
+          <p className={styles.eyebrow}>Services & guidance</p>
           <h2 className={styles.heading}>
             Painting made <span className={styles.highlight}>effortless</span>
           </h2>
           <p className={styles.subtext}>
-            From expert on-site services to easy planning tools and learning resources, explore
-            everything needed to make your paint journey smooth and stress-free.
+            From expert on-site services to easy planning tools and learning
+            resources, explore everything needed to make your paint journey
+            smooth and stress-free.
           </p>
         </header>
 

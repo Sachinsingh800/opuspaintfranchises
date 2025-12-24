@@ -8,7 +8,7 @@ const colors = [
   { name: "Nectarine", code: "YR 2027", bgColor: "#FBA34B" },
   { name: "Blissful Aqua", code: "BG 2024", bgColor: "#A3D8D8" },
   { name: "Lime Spark", code: "YL 9010", bgColor: "#D7E77A" },
-  { name: "Ocean Blue", code: "BB 4050", bgColor: "#4A90E2" },   // data kept, UI colors changed
+  { name: "Ocean Blue", code: "BB 4050", bgColor: "#4A90E2" },
   { name: "Royal Purple", code: "PP 6020", bgColor: "#9B59B6" },
   { name: "Crimson Red", code: "RR 1050", bgColor: "#E74C3C" },
 ];
@@ -26,9 +26,9 @@ const PopularColorSlider = () => {
     setShowLeftArrow(scrollLeft > 4);
     setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 4);
 
-    const firstChild = scrollRef.current.firstElementChild;
-    if (!firstChild) return;
-    const cardWidth = firstChild.getBoundingClientRect().width;
+    const cardWidth = scrollRef.current.firstElementChild
+      ? scrollRef.current.firstElementChild.getBoundingClientRect().width
+      : 0;
     if (cardWidth > 0) {
       const index = Math.round(scrollLeft / cardWidth);
       setActiveIndex(index);

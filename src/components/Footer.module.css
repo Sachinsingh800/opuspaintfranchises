@@ -1,23 +1,17 @@
-/* Footer.module.css */
-/* Full-width dark gradient, aligned with AssuranceBanner theme */
-
 .footer {
-  width: 100%;
-  padding: 40px 16px 24px;
-  background:
-    radial-gradient(circle at top left, rgba(246, 215, 122, 0.18) 0%, transparent 55%),
-    radial-gradient(circle at bottom right, rgba(15, 15, 15, 0.2) 0%, transparent 60%),
-    linear-gradient(135deg, #111111 0%, #181818 45%, #111111 100%);
+  background: radial-gradient(circle at top left, #5b3f8a 0%, #3b2562 45%, #1e1636 100%);
   color: #f9fafb;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 16px 20px;
 }
 
 .footerInner {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
 /* Top row */
+
 .topRow {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
@@ -26,13 +20,14 @@
 }
 
 /* Columns */
+
 .column {
   min-width: 0;
 }
 
 .brandColumn {
   padding-right: 1.5rem;
-  border-right: 1px solid rgba(249, 250, 251, 0.16);
+  border-right: 1px solid rgba(148, 163, 184, 0.35);
 }
 
 .tagline {
@@ -76,6 +71,7 @@
 }
 
 /* Lists */
+
 .linkList {
   list-style: none;
   padding: 0;
@@ -96,6 +92,7 @@
 }
 
 /* Text */
+
 .address {
   font-size: 0.9rem;
   color: #e5e7eb;
@@ -111,6 +108,7 @@
 }
 
 /* WhatsApp */
+
 .whatsapp {
   display: flex;
   align-items: center;
@@ -137,8 +135,9 @@
 }
 
 /* Bottom row */
+
 .bottomRow {
-  border-top: 1px solid rgba(249, 250, 251, 0.16);
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
   margin-top: 2rem;
   padding-top: 1rem;
   text-align: center;
@@ -151,6 +150,7 @@
 }
 
 /* Responsive */
+
 @media (max-width: 1024px) {
   .topRow {
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
@@ -160,7 +160,7 @@
   .brandColumn {
     border-right: none;
     padding-right: 0;
-    border-bottom: 1px solid rgba(249, 250, 251, 0.16);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     padding-bottom: 1.2rem;
     margin-bottom: 0.6rem;
   }
@@ -176,7 +176,7 @@
   }
 
   .brandColumn {
-    border-bottom: 1px solid rgba(249, 250, 251, 0.16);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     padding-bottom: 1.2rem;
     margin-bottom: 0.6rem;
   }
