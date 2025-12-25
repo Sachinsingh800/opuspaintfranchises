@@ -9,7 +9,7 @@ export default function FranchisingCardsSection() {
         key: "dealership",
         icon: "🏢",
         title: "Dealership",
-        investment: "₹10-20 Lakhs",
+        investment: "₹5-10 Lakhs",
         points: [
           "Showroom setup guidance",
           "Product range access",
@@ -22,7 +22,7 @@ export default function FranchisingCardsSection() {
         key: "distributorship",
         icon: "📦",
         title: "Distributorship",
-        investment: "₹30-50 Lakhs",
+        investment: "₹10-20 Lakhs",
         points: [
           "Large territory coverage",
           "Bulk purchasing benefits",
@@ -35,7 +35,7 @@ export default function FranchisingCardsSection() {
         key: "franchise",
         icon: "🏪",
         title: "Franchise",
-        investment: "₹20-30 Lakhs",
+        investment: "₹20 + Lakhs",
         points: [
           "Premium showroom setup",
           "Exclusive territory rights",

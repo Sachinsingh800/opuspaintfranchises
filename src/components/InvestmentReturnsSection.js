@@ -7,9 +7,9 @@ export default function InvestmentReturnsSection() {
   const rows = [
     {
       aspect: "Initial Investment",
-      Franchise: "₹20-30 Lakhs",
+      Franchise: "₹5-10 Lakhs",
       Dealership: "₹10-20 Lakhs",
-      Distributorship: "₹30-50 Lakhs",
+      Distributorship: "₹20+ Lakhs",
     },
     {
       aspect: "Space Required",
