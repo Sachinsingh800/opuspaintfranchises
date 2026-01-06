@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { SitemapStream, streamToPromise } = require("sitemap"); // supports write({url, changefreq, priority}) [web:14]
 
-const BASE_URL = "https://www.opuspaintsfranchise.com";
+const BASE_URL = "https://www.opuspaintfranchise.com";
 
 const routes = [
   { url: "/", changefreq: "daily", priority: 1.0 },
