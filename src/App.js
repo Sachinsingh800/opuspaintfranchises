@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import HeroForm from "./components/HeroForm";
 import styles from "./App.module.css";
 
-// Lazy load non-critical components
 const PopularColorSlider = lazy(() =>
   import("./components/PopularColorSlider")
 );

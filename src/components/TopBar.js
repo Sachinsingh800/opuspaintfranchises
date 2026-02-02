@@ -6,7 +6,7 @@ const TopBar = () => {
     <div className={styles.topBar}>
       <div className={styles.contactInfo}>
         <span className={styles.bullet}>▪</span>
-        <span>Email: contact@opuspaintsfranchises.com</span>
+        <span>Email: contact@birlaopuspaintsfranchises.com</span>
         <span className={styles.bullet}>▪</span>
         <span>Call Us: +91 7581905308</span>
       </div>

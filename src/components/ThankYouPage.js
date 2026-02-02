@@ -95,7 +95,7 @@ const ThankYouPage = () => {
               }}
             >
               Thank you for expressing interest in partnering with{" "}
-              <strong>contact@opuspaintsfranchises.com</strong>. Our team will
+              <strong>contact@birlaopuspaintsfranchises.com</strong>. Our team will
               review your details and reach out within 3–5 business days with
               the next steps.
               <br />
