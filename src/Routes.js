@@ -7,7 +7,6 @@ import ThankYouPage from "./components/ThankYouPage";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import AdminLogin from "./components/AdminDashboard/AdminLogin";
 import NotFound from "./components/NotFound";
-import MaintenancePage from "./components/MaintenancePage";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 

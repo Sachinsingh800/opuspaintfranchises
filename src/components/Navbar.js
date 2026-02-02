@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "./images/-opus-logo.png";
 
